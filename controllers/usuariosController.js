@@ -2,10 +2,10 @@ const { request } = require('express');
 const { Usuario, sequelize } = require('../models');
 
 const usuariosController = {
-    index: async (req, res) => {
+    index: async (request, response) => {
         let usuarios =  await Usuario.findAll();
 
-        return res.json(usuarios);
+        return response.render('usuarios', { listaUsuarios: usuarios });
     },
 
     create: async (request,response) => {
