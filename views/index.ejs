@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Instagram</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" alt="instagram-logo" class="logo">
+    </header>
+    <main>
+
+        <% for (let post of listaPosts) { %>
+        <article>
+            <div class="post-header">
+                <div class="usuario">
+                    <img src="img/avatar-example.png" alt="foto-Brena" id=avatar >
+                    <strong>Brena Monteiro</strong>    
+                </div>
+                <button><img src="img/icons/more-vertical.svg" alt="ver mais"> </button>   
+            </div>  
+            <div class="img-principal" title="Foto da mesa do almoço"
+            style="background-image: url('img/publication_example.jpg');"></div>
+            <div class="comentarios">
+                <div class="legenda">
+                    <p>Foto do meu almoço </p>
+                    <div class="likes"> 
+                        <img src="img/icons/heart.svg" alt="botão like">
+                        <span>3 likes</span>    
+                    </div>
+                    <strong class="data">Postado no dia 15/04/2021</strong> 
+                </div>
+            </div>    
+            <ol>
+                <li>
+                    <p>Deu até fome!</p>
+                </li>
+                <li>
+                    <p>Uhh adorei</p>
+                </li>
+                <li>
+                    <p>Prefiro feijoada!</p>
+                </li>
+            </ol>
+        </article>
+        <% } %>
+    </main>
+    <footer>
+            copyright - 2021
+    </footer>
+</body>
 </html>

@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center; /* alinhamento na horizontal*/
+    align-items: center;   /* alinhamento na vertical*/
+    padding: 50px 0px; 
+    /*150px para cima e para baixo e 0px para laterais*/
+    flex-direction: column;
+}
+
+main article {
+    margin-bottom: 20px;
+}
+
+main article .img-principal {
+    width: 100%;
+}
+
+.logo {
+    width: 150px;   
+}
+
+/* inicio style login */
+.login {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+    margin: 30px;
+}
+
+.login form input {
+    width: 100%;
+    height: 30px;
+    margin: 7px 0;
+    padding: 5px;
+    text-align:justify;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login form button {
+    background-color:#0095f6;
+    color: #fff;
+    padding:  7px 10px;
+    margin: 20px 0;
+    width:  100%;
+    border: none;
+}
+ /*registros */
+ .logo-registro {
+    width: 100px;   
+}
+ .registro {
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+    margin: 30px;
+}
+
+.registro form input {
+    width: 100%;
+    height: 30px;
+    margin: 7px 0;
+    padding: 7px;
+    text-align:justify;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.registro form button {
+    background-color:#0095f6;
+    color: #fff;
+    padding:  7px 10px;
+    margin: 20px 0;
+    width:  100%;
+    border: none;
+}
+
+.registro form p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.cta-login p {
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 18px;  
+}
+
+.banner p {
+    font-size: 12px;
+}
+
+/* index.html - posts */
+header {
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+header .logo{
+    width: 150px;  
+}
+
+article {
+    width: 600px;
+    max-width: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+article .img-principal {
+    /* background-image: url('../img/publication_example.jpg'); USANDO A IMAGEM POR CSS*/
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+article .post-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+article .post-header button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+article .post-header .usuario {
+    display: flex;
+}
+
+article .post-header .usuario img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+article .comentarios .legenda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    vertical-align: center;
+}
+
+
