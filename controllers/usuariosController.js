@@ -1,4 +1,4 @@
-const { request } = require('express');
+const { request, response } = require('express');
 const { Usuario, sequelize } = require('../models');
 
 const usuariosController = {
@@ -8,12 +8,25 @@ const usuariosController = {
         return response.render('usuarios', { listaUsuarios: usuarios });
     },
 
+    registro: (request, response) => {
+        //vai rederizer nosso registo ejs. na pg de usuario 
+        return response.render('registro');
+    },
+
+    login: (require, response) => {
+        return response.render('login');
+    },
+
     create: async (request,response) => {
         let {nome, email, senha} = request.body;
 
-        let usuarioNovo = await Usuario.create({ nome, email, senha});
+        let usuarioNovo = await Usuario.create({ 
+            nome, 
+            email, 
+            senha
+        });
         
-        return response.json(usuarioNovo);
+        return response.redirect('/usuarios/login');
     },
 
     update: async (request, response) => {

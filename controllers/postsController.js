@@ -3,9 +3,19 @@ const { Post, sequelize } = require('../models');
 
 const postsController = {
     index: async (request, response) => {
-        let posts = await Post.findAll();
-        
+        let posts = await Post.findAll({
+            include: ['usuario', 'comentarios', 'curtiu']
+        }); 
         return response.render('index', { listaPosts: posts});
+    },
+
+    show: async (request, response) => {
+        let {usuarios_id} = request.params; //filtra pelo id do usuario
+        
+        let postsUsuario = await Post.findAll({
+            where:{usuarios_id}
+        })
+        return response.json(postsUsuario);
     },
 
     create: async (request,response) => {
@@ -43,15 +53,6 @@ const postsController = {
             where: {id}
         }); 
         return response.json(postDeletado);
-    },
-
-    show: async (request, response) => {
-        let {usuarios_id} = request.params; //filtra pelo id do usuario
-        
-        let perfilUsuario = await Post.findAll({
-            where:{usuarios_id}
-        })
-        return response.json(perfilUsuario);
     }
 }
 

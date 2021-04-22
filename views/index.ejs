@@ -14,37 +14,36 @@
     </header>
     <main>
 
+
         <% for (let post of listaPosts) { %>
         <article>
             <div class="post-header">
                 <div class="usuario">
                     <img src="img/avatar-example.png" alt="foto-Brena" id=avatar >
-                    <strong>Brena Monteiro</strong>    
+                    <strong><%= post.usuario.nome%></strong>    
                 </div>
                 <button><img src="img/icons/more-vertical.svg" alt="ver mais"> </button>   
             </div>  
-            <div class="img-principal" title="Foto da mesa do almoço"
-            style="background-image: url('img/publication_example.jpg');"></div>
+            <div class="img-principal" title="Foto da mesa do almoço" style="background-image: url('<%= post.img %>');">
+            
+            </div>
             <div class="comentarios">
                 <div class="legenda">
-                    <p>Foto do meu almoço </p>
+                    <p> <%= post.texto %> </p>
                     <div class="likes"> 
                         <img src="img/icons/heart.svg" alt="botão like">
-                        <span>3 likes</span>    
+                        <span> <%= post.curtiu.length %> likes</span>  
+                        <!-- <span> <%= post.n_likes %> likes</span>     -->
                     </div>
                     <strong class="data">Postado no dia 15/04/2021</strong> 
                 </div>
             </div>    
             <ol>
-                <li>
-                    <p>Deu até fome!</p>
-                </li>
-                <li>
-                    <p>Uhh adorei</p>
-                </li>
-                <li>
-                    <p>Prefiro feijoada!</p>
-                </li>
+                <% for (let comentario of post.comentarios) { %>
+                    <li>
+                        <p><%= comentario.texto %>  </p>
+                    </li>
+                <% } %> 
             </ol>
         </article>
         <% } %>

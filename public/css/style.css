@@ -160,4 +160,6 @@ article .comentarios .legenda {
     vertical-align: center;
 }
 
-
+.main-registro {
+    flex-direction: row;
+}
