@@ -4,6 +4,13 @@ module.exports = async (request, response, next) => {
     let {email, senha, nome} = request.body;
     let user = await Usuario.findAll({ where: {email} });
 
+    // if (users.length) {
+    //     response.status(400).render('registro', {erro: "Email já cadastrado"})
+    //     return;
+    // }else {
+    //     next()
+    // }
+
     if(!nome || !email || !senha){
         return response.status(400).json({erro: "Você precisa preencher todas as opções."})  
     } else {

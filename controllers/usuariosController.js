@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const { request, response } = require('express');
 const { Usuario, sequelize } = require('../models');
 
@@ -18,12 +19,15 @@ const usuariosController = {
     },
 
     create: async (request,response) => {
-        let {nome, email, senha} = request.body;
+        const {nome, email, senha} = request.body;
 
-        let usuarioNovo = await Usuario.create({ 
+        //criptografando e guardando a senha crypt
+        const senhaCrypt = bcrypt.hashSync(senha, 10);
+
+        const usuarioNovo = await Usuario.create({ 
             nome, 
             email, 
-            senha
+            senha: senhaCrypt
         });
         
         return response.redirect('/usuarios/login');

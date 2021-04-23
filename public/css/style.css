@@ -163,3 +163,9 @@ article .comentarios .legenda {
 .main-registro {
     flex-direction: row;
 }
+
+.main-login {
+    flex-direction: row;
+}
+
+
